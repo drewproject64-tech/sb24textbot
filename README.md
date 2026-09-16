@@ -1,21 +1,19 @@
 # SB24 Text Tools
 
-A small Telegram-native text utility bot built with Python 3.12 and aiogram 3.x.
+A Telegram-native utility and updates bot built with Python 3.12 and aiogram 3.x.
 
-## Exactly three core functions
+## Exactly three user-facing functions
 
-1. **Sort Words** — send words and receive them in alphabetical order.
+1. **Sort Words** — sort a list of words alphabetically.
 2. **Count Text** — count words, characters, characters without spaces, and lines.
-3. **Rearrange Text** — rearrange words or letters into a different order when possible.
+3. **News & Updates** — read SB24's own updates directly inside Telegram.
 
-All three functions run directly inside Telegram. The bot does not depend on an external website or redirect users elsewhere.
+There are no external websites, external news links, or redirect flows in the user experience.
 
 ## Commands
 
-- `/start` — opens the main menu and safely handles Telegram start parameters.
-- `/help` — explains the three functions.
-
-The main functionality is available through the inline menu.
+- `/start` — opens the main menu and safely accepts Telegram start parameters.
+- `/help` — explains the available functions.
 
 ## Configuration
 
@@ -25,9 +23,9 @@ Required environment variable:
 BOT_TOKEN=your_telegram_bot_token_here
 ```
 
-Never commit a real bot token.
+Never commit a real token.
 
-## Run locally
+## Run
 
 ```bash
 python -m pip install -r requirements.txt
@@ -41,16 +39,14 @@ docker build -t sb24textbot .
 docker run --rm -e BOT_TOKEN="YOUR_BOT_TOKEN" sb24textbot
 ```
 
-## QA
-
-Run:
+## Testing
 
 ```bash
 python -m pytest -q
 ```
 
-The test suite covers the three processing functions, limits, dispatcher construction, and the required command/menu content.
+The bot intentionally has no database because the two processing tools and in-app updates do not require persistent user data.
 
-## Telegram Ads destination notes
+## Telegram Ads destination
 
-The bot is designed as a genuine Telegram-native utility destination. Its advertised functionality should accurately describe the three available tools. Do not advertise functionality that is not present.
+The bot is intended to be a complete Telegram-native destination. Its ad should accurately describe the functions available in the bot. Do not advertise external websites or functionality that does not exist.
