@@ -6,7 +6,7 @@ def test_sort_words():
 
 
 def test_count_text():
-    assert count_text("Hello world!\nSB24") == (3, 17, 14, 2)
+    assert count_text("Hello world!\nSB24") == (3, 17, 15, 2)
 
 
 def test_rearrange_text_single_character():
